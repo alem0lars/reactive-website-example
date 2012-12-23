@@ -1,0 +1,26 @@
+// Resource selectors styles
+@import "application/resource_selectors";
+
+
+#build-title {}
+#build {
+  #build-infos-wrp {
+    #build-status-lbl {}
+    #build-status {}
+    #build-startedat-lbl {}
+    #build-startedat {}
+    #build-finishedat-lbl {}
+    #build-finishedat {}
+    #build-commit-infos-lbl {}
+    #build-commit-infos-wrp {
+      #build-commit-digest-lbl {}
+      #build-commit-digest {
+        overflow: auto;
+      }
+      #build-commit-url-lbl {}
+      #build-commit-url {}
+      #build-commit-timestamp-lbl {}
+      #build-commit-timestamp {}
+    }
+  }
+}

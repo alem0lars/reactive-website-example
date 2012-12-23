@@ -1,0 +1,16 @@
+%table#deps-listing.table.table-striped.table-condensed.table-bordered
+  %thead
+    %tr
+      %th Name
+      %th URL
+      %th Stage
+  %tbody
+    - deps.each do |dep|
+      %tr
+        %td= dep.name
+        %td= opt_elem !dep.url.blank?, link_to(dep.url, dep.url)
+        %td= opt_elem !dep.url.blank?, dep.stage
+
+- params = {controller: 'dependencies', action: 'index', selector: 'listing'}
+- params[:id] = prj_id if defined?(prj_id)
+= paginate deps, remote: true, params: params

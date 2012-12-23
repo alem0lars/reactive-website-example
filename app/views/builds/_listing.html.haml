@@ -1,0 +1,22 @@
+%table#builds-listing.table.table-striped.table-condensed.table-bordered
+  %thead
+    %tr
+      %th Started at
+      %th Finished at
+      %th Status
+      %th Commit digest
+      %th Commit URL
+      %th Commit Timestamp
+  %tbody
+    - builds.each do |build|
+      %tr
+        %td= opt_elem !build.started_at.nil?, link_to(build.started_at.strftime('%Y-%m-%d %H:%M:%S'), build_path(build)), 'Not started yet.'
+        %td= opt_elem !build.started_at.nil?, link_to(build.finished_at.strftime('%Y-%m-%d %H:%M:%S'), build_path(build)), 'Not finished yet.'
+        %td= opt_elem !build.status.blank?, link_to(build.status, build_path(build))
+        %td= build.commit_url.blank? ? build.commit_digest : link_to(build.commit_digest, build.commit_url)
+        %td= opt_elem !build.commit_url.blank?, link_to(build.commit_url, build.commit_url)
+        %td= build.commit_url.blank? ? build.commit_timestamp : link_to(build.commit_timestamp, build.commit_url)
+
+- params = {controller: 'builds', action: 'index', selector: 'listing'}
+- params[:id] = branch_id if defined?(branch_id)
+= paginate builds, remote: true, params: params

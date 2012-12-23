@@ -1,0 +1,25 @@
+%h3 Sign in
+
+= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }) do |f|
+
+  .control-group
+    = f.label :email, class: 'control-label'
+    .controls
+      = f.email_field :email
+
+  .control-group
+    = f.label :password, class: 'control-label'
+    .controls
+      = f.password_field :password
+
+  - if devise_mapping.rememberable?
+    .control-group
+      .controls
+        %label.checkbox
+          %input{id: "#{resource_name}_remember_me", name: "#{resource_name}[remember_me]", type: 'checkbox', value: 1} Remember me
+
+  .form-actions
+    = f.submit 'Sign in', class: 'btn btn-primary'
+    = f.submit 'Reset', class: 'btn', type: 'reset'
+
+= render partial: 'devise/shared/links'

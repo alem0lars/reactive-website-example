@@ -1,0 +1,18 @@
+= paginate @prjs_for_sidebar, window: 2, remote: true, params: {controller: 'application', :action => 'sidebar_tiles'}
+
+- @prjs_for_sidebar.each_with_index do |prj, idx|
+  .sidebar-tile-wrp.well.well-small
+    %h3.row-fluid
+      %a.pull-left{href: project_path(prj.id)}= prj.name
+      %a.pull-right{href: project_path(prj.id)}= "##{prj.id}"
+
+    .row-fluid.hidden-phone
+      %dl
+        %dt Description
+        %dd= prj.description
+        %dt N.Branches
+        %dd= prj.total_branches
+        %dt N.Builds
+        %dd= prj.total_builds
+
+    .sidebar-tile-builds-history.hidden-phone{id: "sidebar-tile_#{prj.id}-builds-history", :'data-id' => prj.id}

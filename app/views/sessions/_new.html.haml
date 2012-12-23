@@ -1,0 +1,21 @@
+%form.form-horizontal{action: url_for(controller: 'sessions', action: 'create'), method: 'post'}
+  %fieldset
+    .control-group
+      %label#signup-username-lbl.control-label.visible-desktop{for: '#signup-username'} Username
+      .controls
+        %input{type: 'text', id: 'signup-username', name: 'username', placeholder: 'Username'}
+
+    .control-group
+      %label#signup-password-lbl.control-label.visible-desktop{for: '#signup-password'} Password
+      .controls
+        %input{type: 'password', id: 'signup-password', name: 'password', placeholder: 'Password'}
+
+    .control-group
+      .controls
+        %input{type: 'checkbox', id: 'signup-remember_me', name: 'remember_me', value: 1} Remember Me
+
+    .form-actions.visible-desktop
+      %button.btn.btn-primary{type: 'submit'} Login
+      %button.btn{type: 'reset'} Cancel
+
+    %button.btn.btn-primary.hidden-desktop{type: 'submit'} Login

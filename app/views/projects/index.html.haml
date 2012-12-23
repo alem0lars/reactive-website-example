@@ -1,0 +1,15 @@
+%h2 Projects
+
+#projects.well
+
+  -# Listing for all projects
+  %h3 Projects Listing
+  #prjs-listing-wrp= render partial: 'projects/listing', locals: {prjs: @projects}
+
+
+-# { Assets
+- content_for :stylesheets do
+  = stylesheet_link_tag :'projects/index', :media => 'all'
+- content_for :javascripts do
+  = javascript_include_tag :'projects/index'
+-# }

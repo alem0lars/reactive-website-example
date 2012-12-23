@@ -1,0 +1,19 @@
+#home
+  .hero-unit
+    %h1 Higgs CI
+    %p
+      The world's first
+      %span.label.label-success EXTENDED
+      continuous integration system by
+      %a{href: 'http://nextreamlabs.org'} nextreamlabs
+    %p
+      %a.btn.btn-primary.btn-large{href: projects_path} Browse Projects
+      %a.btn.btn-large{href: about_path} About Us
+
+
+-# { Assets
+- content_for :stylesheets do
+  = stylesheet_link_tag :'pages/home', :media => 'all'
+- content_for :javascripts do
+  = javascript_include_tag :'pages/home'
+-# }

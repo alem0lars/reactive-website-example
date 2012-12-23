@@ -1,0 +1,23 @@
+%table#prjs-listing.table.table-striped.table-condensed.table-bordered
+  %thead
+    %tr
+      %th{rowspan: 2} Id
+      %th{colspan: 3} Informations
+      %th{colspan: 2} Statistics
+    %tr
+      %th Name
+      %th Description
+      %th Website
+      %th N.Branches
+      %th N.Builds
+  %tbody
+    - prjs.each do |prj|
+      %tr
+        %td= link_to prj.id, project_path(prj.id)
+        %td= link_to prj.name, project_path(prj.id)
+        %td= opt_elem !prj.description.blank?, sanitize(truncate(prj.description, length: 107, separator: ' ', omission: '<div class="text-omission">... (continued)</div>'))
+        %td= opt_elem !prj.website.blank?, link_to(prj.website, prj.website)
+        %td= prj.total_branches
+        %td= prj.total_builds
+
+= paginate prjs, remote: true, params: {controller: 'projects', action: 'index', selector: 'listing'}

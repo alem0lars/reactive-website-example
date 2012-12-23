@@ -1,0 +1,18 @@
+%table#branches-listing.table.table-striped.table-condensed.table-bordered
+  %thead
+    %tr
+      %th Name
+      %th builds
+  %tbody
+    - branches.each do |branch|
+      %tr
+        %td
+          %a{href: branch_path(branch)}= branch.name
+
+        %td
+          %h4= "Builds for Branch #{branch.name}"
+          .builds-listing-wrp= render partial: 'builds/listing', locals: {builds: branches.builds(branch.id), branch_id: branch.id}
+
+- params = {controller: 'branches', action: 'index', selector: 'listing'}
+- params[:id] = prj_id if defined?(prj_id)
+= paginate branches, remote: true, params: params

@@ -1,0 +1,38 @@
+- title = (@build.started_at.blank? || @build.finished_at.blank?) ? "Build ##{@build.id}" : "Build: from #{@build.started_at} to #{@build.finished_at}"
+- if ajax?
+  %h3#build-title.res-title= title
+- else
+  %h2#build-title.res-title= title
+  // resource selectors, used to select a particular resource
+  = render 'resource_selectors'
+
+#build.res-view{class: "#{'well' unless ajax?}"}
+  -# Build informations
+  %dl#build-infos-wrp.row-fluid
+    %dt#build-status-lbl Status
+    %dd#build-status= opt_elem !@build.status.blank?, @build.status
+    %dt#build-startedat-lbl Started At
+    %dd#build-startedat= opt_elem !@build.started_at.blank?, @build.started_at, 'Not started yet.'
+    %dt#build-finishedat-lbl Finished At
+    %dd#build-finishedat= opt_elem !@build.finished_at.blank?, @build.finished_at, 'Not finished yet.'
+    %dt#build-commit-infos-lbl Commit
+    %dd#build-commit-infos-wrp
+      %dl#build-commit-infos-wrp.row-fluid
+        %dt#build-commit-digest-lbl Commit Digest
+        %dd#build-commit-digest= @build.commit_digest
+        %dt#build-commit-url-lbl Commit URL
+        %dd#build-commit-url= opt_elem !@build.commit_url.blank?, link_to(@build.commit_url, @build.commit_url)
+        %dt#build-commit-timestamp-lbl Commit Timestamp
+        %dd#build-commit-timestamp= @build.commit_timestamp
+
+
+-# { Assets
+-# Enable gon for ajax requests
+- if ajax?
+  = include_gon
+- unless ajax?
+  - content_for :stylesheets do
+    = stylesheet_link_tag :'builds/show', :media => 'all'
+  - content_for :javascripts do
+    = javascript_include_tag :'builds/show'
+-# }

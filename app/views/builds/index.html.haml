@@ -1,0 +1,19 @@
+%h2 Builds
+
+#builds.well
+
+  -# Listing for all builds
+  %h3 Builds Listing
+  #builds-listing-wrp= render partial: 'builds/listing', locals: {builds: @builds}
+
+
+-# { Assets
+-# Enable gon for ajax requests
+- if ajax?
+  = include_gon
+- unless ajax?
+  - content_for :stylesheets do
+    = stylesheet_link_tag :'builds/index', :media => 'all'
+  - content_for :javascripts do
+    = javascript_include_tag :'builds/index'
+-# }

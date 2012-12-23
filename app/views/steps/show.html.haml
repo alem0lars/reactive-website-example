@@ -1,0 +1,22 @@
+- title = "Step: #{@step.name}"
+- if ajax?
+  %h3#step-title.res-title= title
+- else
+  %h2#step-title.res-title= title
+  -# Resource Selectors, used to select a particular resource
+  = render partial: 'application/resource_selectors'
+
+#step.res-view{class: "#{'well' unless ajax?}"}
+  = Faker::Lorem.paragraph(400)
+
+
+-# { Assets
+-# Enable gon for ajax requests
+- if ajax?
+  = include_gon
+- unless ajax?
+  - content_for :stylesheets do
+    = stylesheet_link_tag :'steps/show', :media => 'all'
+  - content_for :javascripts do
+    = javascript_include_tag :'steps/show'
+-# }

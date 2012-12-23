@@ -1,0 +1,12 @@
+#sidebar-search-wrp.row-fluid
+  .well
+    %h3 Projects Search
+    #sidebar-search.row-fluid
+      %span.span9
+        %input#sidebar-search-input.span10.float-left{type: 'text', placeholder: 'Search'}
+      %span.span3
+        %button#sidebar-search-reset.btn.float-right{type: 'button'} Reset
+
+
+#sidebar-tiles-wrp
+  #sidebar-tiles.row-fluid= render partial: 'sidebar_tiles'
