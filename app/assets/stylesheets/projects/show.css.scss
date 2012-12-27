@@ -1,0 +1,24 @@
+// Resource selectors styles
+@import "application/resource_selectors";
+// Yin-Yang styles
+@import "application/yinyang";
+
+
+#project {
+
+  #prj-infos-wrp {
+    #prj-website-lbl {}
+    #prj-website {}
+    #prj-desc-lbl {}
+    #prj-desc {}
+  }
+  #prj-deps-wrp {
+    #prj-deps-listing-wrp {}
+  }
+  #prj-branches-wrp {
+    #prj-branches-listing-wrp {}
+  }
+  #prj-statuses {
+    #prj-yinyang-wrp {}
+  }
+}

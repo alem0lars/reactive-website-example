@@ -1,0 +1,31 @@
+- title = "Branch: #{@branch.name}"
+- if ajax?
+  %h3#branch-title.res-title= title
+- else
+  %h2#branch-title.res-title= title
+  // resource selectors, used to select a particular resource
+  = render 'resource_selectors'
+
+#branch.res-view{class: "#{'well' unless ajax?}"}
+
+  -# Builds related to the project
+  %h3 Builds
+  #branch-builds-wrp
+    #builds-listing-wrp= render partial: 'builds/listing', locals: {builds: @builds, branch_id: @branch.id}
+
+
+  -# Branch status informations
+  #branch-statuses-wrp.row-fluid
+    #branch-yinyang-wrp=  render partial: 'application/yinyang', layout: false, locals: {yinyang: @yinyang, res_name: 'branch', span_n: 6, id: 'branch-yinyang'}
+
+
+-# { Assets
+-# Enable gon for ajax requests
+- if ajax?
+  = include_gon
+- unless ajax?
+  - content_for :stylesheets do
+    = stylesheet_link_tag :'branches/show', :media => 'all'
+  - content_for :javascripts do
+    = javascript_include_tag :'branches/show'
+-# }

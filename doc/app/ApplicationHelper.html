@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>module ApplicationHelper - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/helpers/application_helper.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-ajax-3F">#ajax?</a>
+    
+    <li><a href="#method-i-opt_elem">#opt_elem</a>
+    
+    <li><a href="#method-i-span_n_for">#span_n_for</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Action.html">Action</a>
+  
+    <li><a href="./ActionsController.html">ActionsController</a>
+  
+    <li><a href="./ActionsHelper.html">ActionsHelper</a>
+  
+    <li><a href="./AdminUser.html">AdminUser</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Branch.html">Branch</a>
+  
+    <li><a href="./BranchesController.html">BranchesController</a>
+  
+    <li><a href="./BranchesHelper.html">BranchesHelper</a>
+  
+    <li><a href="./Build.html">Build</a>
+  
+    <li><a href="./BuildsController.html">BuildsController</a>
+  
+    <li><a href="./BuildsHelper.html">BuildsHelper</a>
+  
+    <li><a href="./Commit.html">Commit</a>
+  
+    <li><a href="./DependenciesController.html">DependenciesController</a>
+  
+    <li><a href="./DependenciesHelper.html">DependenciesHelper</a>
+  
+    <li><a href="./Dependency.html">Dependency</a>
+  
+    <li><a href="./FileOutput.html">FileOutput</a>
+  
+    <li><a href="./Output.html">Output</a>
+  
+    <li><a href="./PagesController.html">PagesController</a>
+  
+    <li><a href="./PagesHelper.html">PagesHelper</a>
+  
+    <li><a href="./PlainOutput.html">PlainOutput</a>
+  
+    <li><a href="./Project.html">Project</a>
+  
+    <li><a href="./ProjectsController.html">ProjectsController</a>
+  
+    <li><a href="./ProjectsHelper.html">ProjectsHelper</a>
+  
+    <li><a href="./SessionsController.html">SessionsController</a>
+  
+    <li><a href="./SessionsHelper.html">SessionsHelper</a>
+  
+    <li><a href="./Step.html">Step</a>
+  
+    <li><a href="./StepsController.html">StepsController</a>
+  
+    <li><a href="./StepsHelper.html">StepsHelper</a>
+  
+    <li><a href="./Tag.html">Tag</a>
+  
+    <li><a href="./TaggedOutput.html">TaggedOutput</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UsersController.html">UsersController</a>
+  
+    <li><a href="./UsersHelper.html">UsersHelper</a>
+  
+    <li><a href="./VersionManager.html">VersionManager</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module ApplicationHelper</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-ajax-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ajax?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ajax-3F-source">
+            <pre><span class="ruby-comment"># File app/helpers/application_helper.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ajax?</span>
+  <span class="ruby-identifier">request</span>.<span class="ruby-identifier">xhr?</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ajax-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ajax-3F-method -->
+
+    
+      <div id="method-i-opt_elem" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">opt_elem</span><span
+            class="method-args">(condition, elem, default_value = 'Not Available.')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="opt_elem-source">
+            <pre><span class="ruby-comment"># File app/helpers/application_helper.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">opt_elem</span>(<span class="ruby-identifier">condition</span>, <span class="ruby-identifier">elem</span>, <span class="ruby-identifier">default_value</span> = <span class="ruby-string">'Not Available.'</span>)
+  <span class="ruby-identifier">default_elem</span> = <span class="ruby-identifier">content_tag</span> <span class="ruby-value">:span</span>, <span class="ruby-identifier">default_value</span>, <span class="ruby-value">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'label label-info'</span>
+  <span class="ruby-identifier">condition</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">elem</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">default_elem</span> <span class="ruby-comment"># return</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- opt_elem-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- opt_elem-method -->
+
+    
+      <div id="method-i-span_n_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">span_n_for</span><span
+            class="method-args">(length, kind)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="span_n_for-source">
+            <pre><span class="ruby-comment"># File app/helpers/application_helper.rb, line 2</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">span_n_for</span>(<span class="ruby-identifier">length</span>, <span class="ruby-identifier">kind</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">kind</span>.<span class="ruby-identifier">to_sym</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:floor</span>
+    <span class="ruby-value">12</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">length</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:ceil</span>
+    <span class="ruby-value">12</span> <span class="ruby-operator">-</span> <span class="ruby-value">12</span> * (<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-operator">/</span> <span class="ruby-identifier">length</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- span_n_for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- span_n_for-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

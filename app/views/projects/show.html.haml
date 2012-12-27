@@ -1,0 +1,46 @@
+- title = "Project: #{@project.name} (##{@project.id})"
+- if ajax?
+  %h3#project-title.res-title= title
+- else
+  %h2#project-title.res-title= title
+  -# Resource Selectors, used to select a particular resource
+  = render partial: 'application/resource_selectors'
+
+#project.res-view{class: "#{'well' unless ajax?}"}
+
+  -# Project informations
+  %dl#prj-infos-wrp.row-fluid
+    %dt#prj-website-lbl Website
+    %dd#prj-website
+      - if @project.website.blank?
+        The project hasn't a website yet.
+      - else
+        %a{href: @project.website}= @project.website
+    %dt#prj-desc-lbl Description
+    %dd#prj-desc= opt_elem !@project.description.blank?, @project.description
+
+  -# Project dependencies
+  #prj-deps-wrp.row-fluid
+    %h3 Project Dependencies
+    #deps-listing-wrp= render partial: 'dependencies/listing', locals: {deps: @dependencies, prj_id: @project.id}
+
+  -# Branches related to the project
+  #prj-branches-wrp
+    %h3 Project Branches
+    #branches-listing-wrp= render partial: 'branches/listing', locals: {branches: @branches, prj_id: @project.id}
+
+  -# Project status informations
+  #prj-statuses-wrp.row-fluid
+    #prj-yinyang-wrp=  render partial: 'application/yinyang', layout: false, locals: {yinyang: @yinyang, res_name: 'project', span_n: 6, id: 'prj-yinyang'}
+
+
+-# { Assets
+-# Enable gon for ajax requests
+- if ajax?
+  = include_gon
+- unless ajax?
+  - content_for :stylesheets do
+    = stylesheet_link_tag :'projects/show', :media => 'all'
+  - content_for :javascripts do
+    = javascript_include_tag :'projects/show'
+-# }

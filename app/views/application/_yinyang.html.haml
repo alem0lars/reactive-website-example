@@ -1,0 +1,17 @@
+%div.yinyang-wrp{class: "span#{span_n}"}
+  .yinyang-title-wrp.row-fluid
+    %h4.yinyang-title.pull-left ☯ Yin VS Yang
+    %h5.yinyang-subtitle.pull-right Succeeded VS Failed
+  .yinyang-title-chinese 陰 vs 陽
+  .yinyang{id: id}
+  .yinyang-footer.row-fluid
+    - yin_q, yang_q = yinyang[:yin], yinyang[:yang]
+    - if yin_q < yang_q
+      %p.yinyang-footer-lbl.label.label-success.pull-right= 'Yin < Yang'
+      %p.yinyang-footer-comment.pull-left= "Your #{res_name} is following the way of light."
+    - elsif yin_q > yang_q
+      %p.yinyang-footer-lbl.label.label-important.pull-right= 'Yin > Yang'
+      %p.yinyang-footer-comment.pull-left= "Your #{res_name} is lost into the darkness."
+    - else
+      %p.yinyang-footer-lbl.label.label-info.pull-right= 'Yin == Yang'
+      %p.yinyang-footer-comment.pull-left= "Your #{res_name} hovers between life and death."

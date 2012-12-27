@@ -1,0 +1,55 @@
+// ==> DOM ELEMENTS OVERRIDES
+
+body {
+  background-color: $white;
+  background: url('/assets/bg.png') repeat;
+  color: $black;
+  font-family: "Cabin";
+  // The basic font size (so it's browser independent)
+  font-size: $font-size-def;
+  // The basic line height (so it's browser independent)
+  line-height: $line-height-def;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Josefinslab";
+}
+form {}
+strong {
+  font-weight: bold;
+}
+table {
+  table-layout: fixed;
+  width: 100%;
+  overflow: hidden;
+  word-wrap: break-word;
+
+  .label {
+    white-space: pre-wrap;
+  }
+}
+
+// ==> CLASSES FOR COMMON STYLES
+
+// style for text indicating an omission
+// (e.g. a omission for the hidden text of a teaser)
+.text-omission {
+  color: $blue;
+  font-style: italic;
+}
+// a normal link
+.link {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: $pink;
+  &:hover {
+    cursor: pointer;
+  }
+}
+// adjust visibility of a dom element
+@mixin hidden() {
+  display: none;
+  visibility: hidden;
+}
+.hidden {
+  @include hidden();
+}

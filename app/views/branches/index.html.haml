@@ -1,0 +1,19 @@
+%h2 Branches
+
+#branches.well
+
+  -# Listing for all branches
+  %h3 Branches Listing
+  #branches-listing-wrp= render partial: 'branches/listing', locals: {branches: @branches}
+
+
+-# { Assets
+-# Enable gon for ajax requests
+- if ajax?
+  = include_gon
+- unless ajax?
+  - content_for :stylesheets do
+    = stylesheet_link_tag :'branches/index', :media => 'all'
+  - content_for :javascripts do
+    = javascript_include_tag :'branches/index'
+-# }

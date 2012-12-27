@@ -1,0 +1,7 @@
+#res-sels.form-inline
+  - @resources_avail.each_with_index do |res_type, idx|
+    - res_sel_id = "res_#{res_type}-sel"
+    %span{:'data-bind' => "visible: res_opts.#{res_type}().length > 1"}
+      %label.res-sel-lbl{for: res_sel_id}= "#{res_type.to_s.titleize}:"
+      %select.res-sel{id: res_sel_id, :'data-restype' => "#{res_type}", :'data-bind' => "foreach: res_opts.#{res_type}()"}
+        %option{:'data-bind' => 'attr: {value: id}, text: summary()'}

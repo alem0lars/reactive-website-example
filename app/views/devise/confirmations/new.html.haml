@@ -1,0 +1,15 @@
+%h3 Resend confirmation instructions
+
+= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), html: { method: :post, class: 'form-horizontal' }) do |f|
+  = devise_error_messages!
+
+  .control-group
+    = f.label :email, class: 'control-label'
+    .controls
+      = f.email_field :email
+
+  .form-actions
+    = f.submit 'Resend confirmation instructions', class: 'btn btn-primary'
+    = f.submit 'Reset', class: 'btn', type: 'reset'
+
+= render partial: "devise/shared/links"

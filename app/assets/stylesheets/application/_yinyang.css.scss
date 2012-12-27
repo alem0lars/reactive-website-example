@@ -1,0 +1,40 @@
+@import "application/colors";
+
+
+.yinyang-wrp {
+  .yinyang-title-wrp {
+    .yinyang-title {}
+    .yinyang-subtitle {
+      color: $gray;
+    }
+  }
+  .yinyang-title-chinese {
+    color: $gray;
+  }
+  .yinyang {
+    height: 20em;
+
+    .yin-lbl-percent {
+      color: $white;
+    }
+    .yin-lbl, .yang-lbl, .yang-lbl-percent {
+      color: $black;
+    }
+    .yin-lbl, .yang-lbl,
+    .yin-lbl-percent, .yang-lbl-percent {
+      font-size: 1.2em;
+      padding: 0.4em;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+  .yinyang-footer {
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+    font-variant: small-caps;
+    color: $gray;
+
+    .yinyang-footer-lbl {}
+    .yinyang-footer-comment {}
+  }
+}

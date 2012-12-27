@@ -1,0 +1,36 @@
+// ==> BOOTSTRAP
+// Available configs for bootstrap @ http://twitter.github.com/bootstrap/less.html#variables
+
+// Page background color
+$bodyBackground: $gray-lighter;
+$textColor: $gray-darker;
+
+$linkColor: $blue;
+$linkColorHover: darken($linkColor, 16%);
+
+$sansFontFamily: 'Cabin';
+$serifFontFamily: $sansFontFamily;
+$monoFontFamily: 'Inconsolata';
+$baseFontFamily: $sansFontFamily;
+$altFontFamily: $serifFontFamily;
+$baseFontSize: $font-size-def;
+$baseLineHeight: $line-height-def;
+
+$tableBackgroundAccent: lighten($gray-lighter, 23.88%);
+$tableBackgroundHover: darken($tableBackgroundAccent, 1.606%);
+$tableBorder: darken($gray-lighter, 9.05%);
+
+$black: $black;
+$grayDarker: $gray-darker;
+$grayDark: $gray-dark;
+$gray: $gray;
+$grayLight: $gray-light;
+$grayLighter: $gray-lighter;
+$white: $white;
+$blue: $blue;
+$green: $green;
+$red: $red;
+$yellow: $yellow;
+$orange: $orange;
+$pink: $pink;
+$purple: $purple;

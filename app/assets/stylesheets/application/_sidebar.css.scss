@@ -1,0 +1,18 @@
+#sidebar {
+  #sidebar-search-wrp {
+    #sidebar-search {
+      #sidebar-search input {
+        width: 100%;
+      }
+      #sidebar-search button {
+        width: 100%;
+      }
+    }
+  }
+  #sidebar-tiles-wrp {
+    #sidebar-tiles {
+      .sidebar-tile-wrp {}
+      .sidebar-tile-builds-history {}
+    }
+  }
+}

@@ -1,0 +1,19 @@
+%h2 Dependencies
+
+#dependencies.well
+
+  -# Listing for all dependencies
+  %h3 Dependencies Listing
+  #deps-listing-wrp= render partial: 'dependencies/listing', locals: {deps: @dependencies}
+
+
+-# { Assets
+-# Enable gon for ajax requests
+- if ajax?
+  = include_gon
+- unless ajax?
+  - content_for :stylesheets do
+    = stylesheet_link_tag :'dependencies/index', :media => 'all'
+  - content_for :javascripts do
+    = javascript_include_tag :'dependencies/index'
+-# }

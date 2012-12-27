@@ -1,0 +1,27 @@
+%h2 Top Contributors
+%ul
+  %li
+    %a{href: 'http://alessandro.nextreamlabs.org'} Alessandro Molari
+    (from:
+    %a{href: 'http://nextreamlabs.org'} nextreamlabs
+    )
+  %li
+    %a{href: 'http://luca.nextreamlabs.org'} Luca Molari
+    (from:
+    %a{href: 'http://nextreamlabs.org'} nextreamlabs
+    )
+
+%h2 Top Open Source software used:
+%ul
+  %li
+    %a{href: 'http://buildbot.net'} Buildbot
+  %li
+    %a{href: 'http://rubyonrails.org'} Rails
+
+
+-# { Assets
+- content_for :stylesheets do
+  = stylesheet_link_tag :'pages/about', :media => 'all'
+- content_for :javascripts do
+  = javascript_include_tag :'pages/about'
+-# }

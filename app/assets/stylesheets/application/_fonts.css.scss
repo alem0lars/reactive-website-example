@@ -1,0 +1,45 @@
+// == VARIABLES
+
+$font-size-def: 13px;
+$line-height-def: 18px;
+
+// ==> FONT FACES
+
+@include font-face( // Cabin
+  "Cabin",
+  font-files(
+    "/assets/cabin/cabin-regular.woff", "woff",
+    "/assets/cabin/cabin-regular.eot", "eot",
+    "/assets/cabin/cabin-regular.ttf", "truetype",
+    "/assets/cabin/cabin-regular.svg", "svg"
+  ),
+  "/assets/cabin/cabin-regular.eot?#iefix",
+  normal,
+  normal
+);
+
+@include font-face( // Inconsolata
+  "Inconsolata",
+  font-files(
+    "/assets/inconsolata/inconsolata.woff", "woff",
+    "/assets/inconsolata/inconsolata.eot", "eot",
+    "/assets/inconsolata/inconsolata.ttf", "truetype",
+    "/assets/inconsolata/inconsolata.svg", "svg"
+  ),
+  "/assets/cabin-regular/inconsolata.eot?#iefix",
+  normal,
+  normal
+);
+
+@include font-face( // Josefinslab
+  "Josefinslab",
+  font-files(
+    "/assets/josefinslab/josefinslab-regular.woff", "woff",
+    "/assets/josefinslab/josefinslab-regular.eot", "eot",
+    "/assets/josefinslab/josefinslab-regular.ttf", "truetype",
+    "/assets/josefinslab/josefinslab-regular.svg", "svg"
+  ),
+  "/assets/cabin-regular/cabin-regular.eot?#iefix",
+  normal,
+  normal
+);

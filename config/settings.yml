@@ -1,0 +1,27 @@
+# ==> SIDEBAR SETTINGS
+
+sidebar:
+  tiles:
+    listing:
+      pages: 1 #4
+
+# ==> RESOURCES SETTINGS
+
+dependencies:
+  listing:
+    pages: 1 #14
+
+projects:
+  listing:
+    pages: 1 #10
+
+branches:
+  listing:
+    pages: 1 #2
+  builds:
+    listing:
+      pages: 1 #4
+
+builds:
+  listing:
+    pages: 1 #8

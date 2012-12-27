@@ -1,0 +1,29 @@
+!!! 5
+%html
+  %head
+    %title Higgs CI
+    %meta{:charset => 'utf-8'}
+    %meta{'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1'}
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0, maximum-scale=1.0'}
+    = stylesheet_link_tag :application, :media => 'all'
+    = yield :stylesheets
+    = include_gon
+    = javascript_include_tag :application
+    = yield :javascripts
+    = csrf_meta_tags
+
+  %body
+
+    %nav#menu.navbar.navbar-fixed-top
+      .navbar-inner
+        .container= render partial: 'application/menu'
+
+    #container.container-fluid
+      %header#banner.row-fluid{role: 'banner'}= render partial: 'application/banner'
+      %section#container.row-fluid
+        %aside#sidebar.span4= render partial: 'application/sidebar'
+        #page.span8
+          #messages= render partial: 'application/messages'
+          #main{:role => 'main'}= yield
+
+      %footer.row-fluid{:role => 'contentinfo'}= render partial: 'application/footer'
